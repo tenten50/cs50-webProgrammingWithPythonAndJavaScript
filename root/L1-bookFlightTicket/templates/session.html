@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    booking website
+{% endblock %}
+
+{% block body %}
+    <h2>{{ headline }}</h2>
+
+    <ul>
+        {% for note in notes %}
+            <li>{{ note }}</li>
+        {% endfor %}
+    </ul>
+
+    <form action="{{ url_for('index') }}" method="POST">
+        <input type="text", name="note" placeholder="Enter you name">
+        <button>Submit</button>
+    </form>
+
+    
+{% endblock %}
